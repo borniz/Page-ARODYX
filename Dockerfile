@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
@@ -6,7 +6,7 @@ COPY . .
 RUN npx ng build --configuration production
 
 # Etapa 2: Servidor Node.js para Angular SSR en producción
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /app
 # Copiamos la estructura exacta generada en dist/frontend
 COPY --from=build /app/dist/frontend ./dist/frontend
