@@ -1,0 +1,15 @@
+services:
+  arodyx-web:
+    build: .
+    container_name: arodyx-web
+    restart: always
+    environment:
+      NG_ALLOWED_HOSTS: arodyx.com,www.arodyx.com
+      NG_TRUST_PROXY_HEADERS: X-FORWARDED-HOST,X-FORWARDED-PROTO,X-FORWARDED-PORT,X-FORWARDED-FOR,X-FORWARDED-SERVER
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.arodyx.rule=Host(`arodyx.com`) || Host(`www.arodyx.com`)
+      - traefik.http.routers.arodyx.entrypoints=websecure
+      - traefik.http.routers.arodyx.tls=true
+      - traefik.http.routers.arodyx.tls.certresolver=letsencrypt
+      - traefik.http.services.arodyx.loadbalancer.server.port=4000
