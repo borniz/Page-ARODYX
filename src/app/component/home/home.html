@@ -2,7 +2,7 @@
 <!-- PARTE 1: NAVBAR Y SECCIÓN HERO             -->
 <!-- ========================================== -->
 
-<div class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-blue-500 selection:text-white  ">
+<div class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-blue-500 selection:text-white  bg-[url('/espacio.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
 
   <!-- NAVBAR PREMIUM -->
   <nav class="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md bg-linear-to-r from-gray-800 from-5% to-blue-600/[0.8]">
@@ -21,6 +21,7 @@
           <a href="#desarrollo-web" class="hover:text-blue-500 transition-colors">Desarrollo Web</a>
           <a href="#faqs" class="hover:text-blue-500 transition-colors">Soporte / FAQ</a>
           <a href="#contacto-interactivo" class="rounded-xl bg-blue-600 px-4 py-2 text-white shadow-sm hover:bg-blue-700 transition-all">Cotizar Demo</a>
+          <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/30 px-4 py-2 text-slate-200 transition-colors hover:border-white/60 hover:bg-white/10 hover:text-white">Ingresar</a>
         </div>
 
         <!-- Botón Menú Móvil -->
@@ -39,18 +40,19 @@
       <a href="#desarrollo-web" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Desarrollo Web</a>
       <a href="#faqs" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Soporte / FAQ</a>
       <a href="#contacto-interactivo" (click)="toggleMenuMovil()" class="block text-center rounded-xl bg-blue-600 py-2.5 text-white font-bold">Cotizar Demo</a>
+      <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="block rounded-xl border border-slate-200 py-2.5 text-center text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50">Ingresar al ERP</a>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-slate-50 py-16 lg:py-24 bg-linear-to-b from-blue-700 to-slate-200">
+  <header class="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-gray\[0.5] to-gray-400\[0.5] py-16 lg:py-24 bg-linear-to-b from-blue-700 to-gray-400 bg-[url('/espacio.jpg')] bg-cover bg-center bg-h">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <div class="space-y-6 lg:col-span-7 text-center lg:text-left">
-          <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+          <h1 class="text-4xl font-extrabold tracking-tight text-slate-300 sm:text-5xl md:text-6xl">
             Controla tu empresa <br><span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">sin usar papel ni lápiz</span>
           </h1>
-          <p class="text-base text-slate-600 sm:text-lg max-w-2xl mx-auto lg:mx-0">
+          <p class="text-base text-slate-100 sm:text-lg max-w-2xl mx-auto lg:mx-0">
             Ecosistema ERP modular y desarrollo web a la medida. Administra stock, automatiza tus gastos y supervisa el rendimiento de tus sucursales en tiempo real desde tu celular.
           </p>
           <div class="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -80,7 +82,7 @@
     </div>
   </header>
 
-  <section class="py-20 bg-linear-to-b from-slate-200 to-blue-700/[0.5]">
+  <section class="py-20 bg-linear-to-b from-gray-400 to-blue-700/[0.5]">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       
       <div class="grid gap-8 md:grid-cols-2">
