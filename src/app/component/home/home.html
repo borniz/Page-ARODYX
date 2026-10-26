@@ -2,10 +2,10 @@
 <!-- PARTE 1: NAVBAR Y SECCIÓN HERO             -->
 <!-- ========================================== -->
 
-<div class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-blue-500 selection:text-white  bg-[url('/espacio.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
+<div class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-cyan-500 selection:text-white">
 
   <!-- NAVBAR PREMIUM -->
-  <nav class="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md bg-linear-to-r from-gray-800 from-5% to-blue-600/[0.8]">
+  <nav class="sticky top-0 z-40 w-full border-b border-white/10 bg-slate-950/95 text-white shadow-lg shadow-slate-950/10 backdrop-blur-xl">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         
@@ -15,18 +15,18 @@
         </div>
 
         <!-- Menú de Escritorio -->
-        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-200">
-          <a href="#soluciones" class="hover:text-blue-500 transition-colors">Sistemas ERP</a>
-          <a href="#precios-erp" class="hover:text-blue-500 transition-colors">Planes</a>
-          <a href="#desarrollo-web" class="hover:text-blue-500 transition-colors">Desarrollo Web</a>
-          <a href="#faqs" class="hover:text-blue-500 transition-colors">Soporte / FAQ</a>
-          <a href="#contacto-interactivo" class="rounded-xl bg-blue-600 px-4 py-2 text-white shadow-sm hover:bg-blue-700 transition-all">Cotizar Demo</a>
-          <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/30 px-4 py-2 text-slate-200 transition-colors hover:border-white/60 hover:bg-white/10 hover:text-white">Ingresar</a>
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-semibold text-slate-300">
+          <a href="#soluciones" class="transition-colors hover:text-cyan-300">Sistemas ERP</a>
+          <a href="#precios-erp" class="transition-colors hover:text-cyan-300">Planes</a>
+          <a href="#desarrollo-web" class="transition-colors hover:text-cyan-300">Desarrollo Web</a>
+          <a href="#faqs" class="transition-colors hover:text-cyan-300">Soporte / FAQ</a>
+          <a href="#contacto-interactivo" class="rounded-xl bg-cyan-400 px-4 py-2 text-slate-950 shadow-sm transition-all hover:bg-cyan-300">Cotizar Demo</a>
+          <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/20 px-4 py-2 text-slate-200 transition-colors hover:border-white/50 hover:bg-white/10 hover:text-white">Ingresar</a>
         </div>
 
         <!-- Botón Menú Móvil -->
         <div class="md:hidden">
-          <button (click)="toggleMenuMovil()" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+          <button (click)="toggleMenuMovil()" aria-label="Abrir menú" class="p-2 text-slate-200 hover:text-white focus:outline-none">
             <span class="text-2xl">{{ menuMovilAbierto ? '✕' : '☰' }}</span>
           </button>
         </div>
@@ -34,39 +34,42 @@
     </div>
 
     <!-- Desplegable Móvil -->
-    <div *ngIf="menuMovilAbierto" class="md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-3 shadow-inner animate-fadeIn">
+    <div *ngIf="menuMovilAbierto" class="md:hidden border-t border-white/10 bg-slate-900 px-4 py-4 text-slate-200 space-y-3 shadow-inner animate-fadeIn">
       <a href="#soluciones" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Sistemas ERP</a>
       <a href="#precios-erp" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Planes</a>
       <a href="#desarrollo-web" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Desarrollo Web</a>
       <a href="#faqs" (click)="toggleMenuMovil()" class="block text-sm font-semibold py-2">Soporte / FAQ</a>
-      <a href="#contacto-interactivo" (click)="toggleMenuMovil()" class="block text-center rounded-xl bg-blue-600 py-2.5 text-white font-bold">Cotizar Demo</a>
-      <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="block rounded-xl border border-slate-200 py-2.5 text-center text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50">Ingresar al ERP</a>
+      <a href="#contacto-interactivo" (click)="toggleMenuMovil()" class="block text-center rounded-xl bg-cyan-400 py-2.5 text-slate-950 font-bold">Cotizar Demo</a>
+      <a href="https://app.arodyx.com" target="_blank" rel="noopener noreferrer" class="block rounded-xl border border-white/20 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10">Ingresar al ERP</a>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-gray\[0.5] to-gray-400\[0.5] py-16 lg:py-24 bg-linear-to-b from-blue-700 to-gray-400 bg-[url('/espacio.jpg')] bg-cover bg-center bg-h">
+  <header class="relative isolate overflow-hidden bg-slate-950 py-20 lg:py-28">
+    <div class="absolute inset-0 -z-10 bg-[url('/a4.jpg')] bg-cover bg-center opacity-35"></div>
+    <div class="absolute inset-0 -z-10 bg-linear-to-r from-slate-950 via-slate-950/90 to-slate-950/45"></div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <div class="space-y-6 lg:col-span-7 text-center lg:text-left">
-          <h1 class="text-4xl font-extrabold tracking-tight text-slate-300 sm:text-5xl md:text-6xl">
-            Controla tu empresa <br><span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">sin usar papel ni lápiz</span>
+          <span class="inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">Tecnología que impulsa tu negocio</span>
+          <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Controla tu empresa <br><span class="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">sin usar papel ni lápiz</span>
           </h1>
-          <p class="text-base text-slate-100 sm:text-lg max-w-2xl mx-auto lg:mx-0">
+          <p class="text-base leading-7 text-slate-300 sm:text-lg max-w-2xl mx-auto lg:mx-0">
             Ecosistema ERP modular y desarrollo web a la medida. Administra stock, automatiza tus gastos y supervisa el rendimiento de tus sucursales en tiempo real desde tu celular.
           </p>
           <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-            <a href="#contacto-interactivo" class="rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/10 hover:bg-blue-700">Comenzar Ahora</a>
-            <a href="#precios-erp" class="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50">Ver Tarifas</a>
+            <a href="#contacto-interactivo" class="rounded-xl bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-950/30 transition hover:-translate-y-0.5 hover:bg-cyan-300">Solicitar una demo</a>
+            <a href="#precios-erp" class="rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10">Ver planes</a>
           </div>
         </div>
 
         <!-- Mockup Visual Simulativo -->
         <div class="lg:col-span-5 max-w-md mx-auto w-full">
-          <div class="rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-slate-100">
+          <div class="rounded-2xl border border-white/10 bg-slate-900/90 p-4 shadow-2xl shadow-black/40 ring-1 ring-white/10 backdrop-blur">
             <div class="mb-3 flex items-center justify-between border-b pb-2 text-xs text-slate-400">
               <div class="flex space-x-1"><span class="h-2 w-2 rounded-full bg-rose-400"></span><span class="h-2 w-2 rounded-full bg-amber-400"></span><span class="h-2 w-2 rounded-full bg-emerald-400"></span></div>
-              <span class="font-bold text-blue-600">ARODYX CLOUD</span>
+              <span class="font-bold text-cyan-300">ARODYX CLOUD</span>
             </div>
             <div class="rounded-xl bg-slate-900 p-5 text-white">
               <span class="text-[10px] text-slate-400 block uppercase tracking-wider font-bold">Módulos en Operación</span>
@@ -82,18 +85,18 @@
     </div>
   </header>
 
-  <section class="py-20 bg-linear-to-b from-gray-400 to-blue-700/[0.5]">
+  <section id="soluciones" class="bg-slate-50 py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       
       <div class="grid gap-8 md:grid-cols-2">
         
         <!-- COLUMNA 1: EL DOLOR ACTUAL DEL CLIENTE -->
-        <div class="rounded-2xl border border-rose-500/10 bg-rose-950/[0.4] p-6 md:p-8 space-y-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8 space-y-4">
           <div class="flex items-center space-x-3 text-rose-400 font-bold">
             <span class="text-xl">❌</span>
-            <h3 class="text-lg text-white">Tu negocio hoy (Sin ARODYX)</h3>
+            <h3 class="text-lg text-slate-900">Tu negocio hoy (Sin ARODYX)</h3>
           </div>
-          <ul class="space-y-3.5 text-sm text-slate-200">
+          <ul class="space-y-3.5 text-sm text-slate-600">
             <li class="flex items-start"><span class="text-rose-500 mr-2.5">▪</span> Pérdidas hormiga de dinero e inventario que notas al final del mes.</li>
             <li class="flex items-start"><span class="text-rose-500 mr-2.5">▪</span> Esclavo de tu propio local: si tú no estás presente, el negocio no funciona igual.</li>
             <li class="flex items-start"><span class="text-rose-500 mr-2.5">▪</span> Libretas perdidas, cuentas mal hechas a mano y descuadres de caja estresantes.</li>
@@ -101,16 +104,16 @@
         </div>
 
         <!-- COLUMNA 2: LA LIBERTAD CON TU SOFTWARE -->
-        <div class="rounded-2xl border border-emerald-500/10 bg-emerald-950/[0.4] p-6 md:p-8 space-y-4 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 font-bold text-[10px] uppercase tracking-widest px-3 py-1 rounded-bl-xl">El Cambio</div>
-          <div class="flex items-center space-x-3 text-emerald-400 font-bold">
+        <div class="rounded-2xl border border-cyan-200 bg-cyan-50 p-6 shadow-sm md:p-8 space-y-4 relative overflow-hidden">
+          <div class="absolute top-0 right-0 rounded-bl-xl bg-cyan-100 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan-800">El Cambio</div>
+          <div class="flex items-center space-x-3 text-emerald-700 font-bold">
             <span class="text-xl">🛡️</span>
-            <h3 class="text-lg text-white">Tu negocio en piloto automático</h3>
+            <h3 class="text-lg text-slate-900">Tu negocio en piloto automático</h3>
           </div>
-          <ul class="space-y-3.5 text-sm text-slate-200">
-            <li class="flex items-start"><span class="text-emerald-400 mr-2.5">✓</span> Alertas instantáneas en tu celular cada vez que se vende algo o queda poco stock.</li>
-            <li class="flex items-start"><span class="text-emerald-400 mr-2.5">✓</span> Libertad total: supervisas restaurantes, ferreterías o tiendas desde cualquier lugar del mundo.</li>
-            <li class="flex items-start"><span class="text-emerald-400 mr-2.5">✓</span> Reportes gráficos automáticos de ganancias netas diarias sin tocar una calculadora.</li>
+          <ul class="space-y-3.5 text-sm text-slate-600">
+            <li class="flex items-start"><span class="mr-2.5 text-emerald-700">✓</span> Alertas instantáneas en tu celular cada vez que se vende algo o queda poco stock.</li>
+            <li class="flex items-start"><span class="mr-2.5 text-emerald-700">✓</span> Libertad total: supervisas restaurantes, ferreterías o tiendas desde cualquier lugar del mundo.</li>
+            <li class="flex items-start"><span class="mr-2.5 text-emerald-700">✓</span> Reportes gráficos automáticos de ganancias netas diarias sin tocar una calculadora.</li>
           </ul>
         </div>
 
@@ -121,7 +124,7 @@
 <!-- ========================================== -->
 <!-- PARTE 2: CONMUTADOR Y PLANES DE PRECIO ERP -->
 <!-- ========================================== -->
-  <section id="precios-erp" class="py-20 bg-linear-to-b from-blue-700/[0.5] to-slate-200">
+  <section id="precios-erp" class="border-y border-slate-200 bg-white py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       
       <!-- Encabezado y Conmutador de Facturación -->
@@ -148,7 +151,7 @@
       <!-- Renderizado de las 4 Tarjetas de la captura mediante Grid -->
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
         <div *ngFor="let plan of planesERP" 
-             class="flex flex-col justify-between rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm transition-all hover:shadow-xl hover:border-blue-100  ">
+             class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl">
           <div>
             <h3 class="text-lg font-bold text-slate-900">{{ plan.nombre }}</h3>
             <p class="mt-2 text-xs text-slate-500 min-h-[32px]">{{ plan.descripcion }}</p>
@@ -174,7 +177,7 @@
 <!-- ========================================== -->
 <!-- PARTE 3: SERVICIOS DE DESARROLLO WEB       -->
 <!-- ========================================== -->
-  <section id="desarrollo-web" class="py-20 bg-slate-50 border-t border-slate-100 bg-linear-to-b from-slate-200 to-blue-700/[0.5]">
+  <section id="desarrollo-web" class="border-b border-slate-200 bg-slate-50 py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -211,7 +214,7 @@
 <!-- PARTE 4: FAQS, ASISTENTE Y BOTÓN WHATSAPP  -->
 <!-- ========================================== -->
   <!-- SECCIÓN DE PREGUNTAS FRECUENTES (FAQs) -->
-  <section id="faqs" class="py-20  border-t bg-linear-to-b from-blue-700/[0.5] to-slate-200">
+  <section id="faqs" class="border-t border-slate-200 bg-white py-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6">
       <h2 class="text-3xl font-extrabold text-slate-900 text-center mb-10">Preguntas Frecuentes</h2>
       <div class="space-y-4">
