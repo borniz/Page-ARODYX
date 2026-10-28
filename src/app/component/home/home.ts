@@ -19,41 +19,45 @@ export class Home {
 
   // Lógica del Formulario por Pasos
   pasoActual: number = 1;
-  estaEnviando: boolean = false;
-  formularioEnviado: boolean = false;
   datosContacto = { tipoNegocio: '', nombre: '', whatsapp: '', mensaje: '' };
 
   // Control de WhatsApp Flotante
   mostrarMenuWhatsapp: boolean = false;
   numeroTelefono: string = '573134398489';
 
-  // ESTRUCTURA DE PLANES ERP (Extraídos de tus capturas de pantalla)
+  // En lanzamiento, todos los planes incluyen los mismos módulos; solo cambia el límite de roles.
   planesERP = [
     {
-      nombre: 'Básica',
-      descripcion: 'Control esencial de inventario y ventas físicas.',
-      precioMensual: 49900,
-      caracteristicas: ['Productos e Inventario', 'Clientes y Ventas', 'Facturación PDF', 'Envío por correo', 'Dashboard básico', '2 usuarios / 1 bodega']
+      nombre: 'Básico',
+      descripcion: 'Para comenzar a organizar la operación de tu negocio.',
+      roles: '2 roles'
     },
     {
       nombre: 'Profesional',
-      descripcion: 'Gestión comercial avanzada y tesorería en tiempo real.',
-      precioMensual: 89900,
-      caracteristicas: ['Todo lo anterior +', 'Compras y proveedores', 'Caja y tesorería', 'Cartera y cobranza', 'Punto de Venta (POS)', 'Reportes detallados', '5 usuarios / 3 cajas']
+      descripcion: 'Para equipos que necesitan trabajar de forma coordinada.',
+      roles: '5 roles'
     },
     {
       nombre: 'Avanzado',
-      descripcion: 'Contabilidad integrada y automatización multi-sucursal.',
-      precioMensual: 149900,
-      caracteristicas: ['Todo lo anterior +', 'Contabilidad automatizada', 'Módulo CRM', 'Multi-sede y Multi-bodega', 'Usuarios y roles avanzados', 'Auditoría y Reportes BI', '10 usuarios / API Básica']
+      descripcion: 'Para negocios con más personal y una operación activa.',
+      roles: '10 roles'
     },
     {
       nombre: 'Empresarial',
-      descripcion: 'Infraestructura total a la medida para grandes corporaciones.',
-      precioMensual: 249900,
-      caracteristicas: ['Usuarios ilimitados', 'Bodegas y sedes según necesidad', 'API empresarial completa', 'Integraciones a medida', 'Automatizaciones complejas', 'Soporte prioritario 24/7', 'Personalizaciones de interfaz']
+      descripcion: 'Para operaciones con equipos de más de diez personas.',
+      roles: '11+ roles'
     }
   ];
+
+  negociosERP = [
+    { nombre: 'Taller', detalle: 'Autos, motos o servicio mixto', icono: '🔧', precios: [59900, 99900, 159900, 239900] },
+    { nombre: 'Ferretería', detalle: 'Inventario y venta de mostrador', icono: '🧰', precios: [69900, 119900, 189900, 279900] },
+    { nombre: 'Autolavado', detalle: 'Servicios, turnos y operación diaria', icono: '🚘', precios: [49900, 79900, 129900, 199900] },
+    { nombre: 'Supermercado', detalle: 'Alto movimiento de productos y ventas', icono: '🛒', precios: [89900, 149900, 239900, 349900] },
+    { nombre: 'Panadería', detalle: 'Producción, productos y ventas', icono: '🥖', precios: [59900, 99900, 159900, 239900] },
+    { nombre: 'Restaurante', detalle: 'Atención, pedidos y control del negocio', icono: '🍽️', precios: [69900, 119900, 189900, 279900] }
+  ];
+  negocioSeleccionado = this.negociosERP[0];
 
   // ESTRUCTURA DE SERVICIOS DESARROLLO WEB
   serviciosWeb = [
@@ -65,8 +69,8 @@ export class Home {
   // SECCIÓN DE PREGUNTAS FRECUENTES (Interactiva)
   faqs = [
     { pregunta: '¿La Página Web Básica incluye algún módulo ERP?', respuesta: 'No. Como se detalla en nuestra estructura comercial, las páginas web son soluciones independientes de marketing. Si deseas controlar inventarios o automatizar gastos, debes adquirir un Plan ERP o solicitar una integración.', abierta: false },
-    { pregunta: '¿Cómo funciona el pago por módulo en los sistemas ERP?', respuesta: 'Nuestra arquitectura es modular. Esto significa que no estás amarrado a un paquete inflado. Puedes iniciar con el plan Básico y añadir módulos específicos de contabilidad o CRM en el futuro pagando solo por lo que usas.', abierta: false },
-    { origin: '¿La información de mi negocio está segura en la nube?', respuesta: 'Completamente. Tus catálogos de productos, costos e históricos financieros se encriptan con certificados SSL de nivel bancario y se realizan respaldos automáticos diarios.', abierta: false }
+    { pregunta: '¿Qué incluyen los planes ERP?', respuesta: 'Durante el lanzamiento, todos los planes incluyen las mismas funcionalidades y módulos. El precio cambia según el tipo de negocio y el plan seleccionado determina cuántos roles puedes crear: 2, 5, 10 o más de 10.', abierta: false },
+    { pregunta: '¿La información de mi negocio está segura en la nube?', respuesta: 'Completamente. Tus catálogos de productos, costos e históricos financieros se encriptan con certificados SSL de nivel bancario y se realizan respaldos automáticos diarios.', abierta: false }
   ];
 
   // Métodos de control
@@ -93,12 +97,14 @@ export class Home {
 
   enviarFormulario(event: Event) {
     event.preventDefault();
-    this.estaEnviando = true;
-    setTimeout(() => {
-      this.estaEnviando = false;
-      this.formularioEnviado = true;
-      this.pasoActual = 3;
-    }, 1800);
+    const texto = [
+      'Hola ARODYX, quiero agendar una demo personalizada.',
+      `Negocio: ${this.datosContacto.tipoNegocio || 'No especificado'}`,
+      `Nombre o empresa: ${this.datosContacto.nombre}`,
+      `WhatsApp de contacto: ${this.datosContacto.whatsapp}`
+    ].join('\n');
+    window.open(`https://wa.me/${this.numeroTelefono}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener,noreferrer');
+    this.pasoActual = 3;
   }
 
   abrirWhatsapp(entidad: string) {
